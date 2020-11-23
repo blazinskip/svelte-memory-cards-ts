@@ -1,45 +1,45 @@
 <style type="scss">
-.card {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  cursor: pointer;
-  transform-style: preserve-3d;
-  transform-origin: center right;
-  transition: transform 1s;
-}
+  .card {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    transform-style: preserve-3d;
+    transform-origin: center right;
+    transition: transform 1s;
+  }
 
-.card.card--flipped {
-  transform: translateX(-100%) rotateY(-180deg);
-}
+  .card.card--flipped {
+    transform: translateX(-100%) rotateY(-180deg);
+  }
 
-.card__face {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  line-height: 260px;
-  color: white;
-  text-align: center;
-  font-weight: bold;
-  font-size: 40px;
-  backface-visibility: hidden;
-}
+  .card__face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    line-height: 260px;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    font-size: 40px;
+    backface-visibility: hidden;
+  }
 
-.card__face--front {
-  background: red;
-}
+  .card__face--front {
+    background: red;
+  }
 
-.card__face--back {
-  background: blue;
-  transform: rotateY(180deg);
-}
+  .card__face--back {
+    background: blue;
+    transform: rotateY(180deg);
+  }
 </style>
 
 <script lang="ts">
-import type { Card } from '../interfaces/card';
+  import type { Card } from '../interfaces/card';
 
-export let card: Card;
-export let cardClickHandler = () => {};
+  export let card: Card;
+  export let cardClickHandler = () => {};
 </script>
 
 <div class="card" class:card--flipped="{card.filpped}" on:click="{cardClickHandler}">
