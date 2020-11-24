@@ -5,6 +5,7 @@
     max-width: 240px;
     margin: 0 auto;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     height: 95vh;
@@ -46,8 +47,19 @@
 </style>
 
 <script lang="ts">
+  import { onDestroy } from 'svelte';
+
   import Card from './components/Card.svelte';
   import type { Card as CardModel } from './interfaces/card';
+
+  let won = false;
+  let started = false;
+  let secondsCounterInterval = null;
+
+  let cardToCompare = [];
+  let correctCards = [] as CardModel[];
+
+  let seconds = 0;
 
   $: cards = shuffleArray<CardModel>([
     { filpped: false, color: 'orange' },
@@ -68,19 +80,23 @@
     { filpped: false, color: 'lightcoral' },
   ]);
 
-  let won = false;
-
-  let cardToCompare = [];
-  let correctCards = [] as CardModel[];
-
   function resetGame() {
     cards = shuffleArray(cards.map((card) => ({ ...card, filpped: false })));
     correctCards = [];
     cardToCompare = [];
     won = false;
+    started = false;
+    seconds = 0;
   }
 
   function flip(card: CardModel, index: number) {
+    if (!started) {
+      started = true;
+      secondsCounterInterval = setInterval(() => {
+        seconds++;
+      }, 1000);
+    }
+
     if (card.filpped) {
       return;
     }
@@ -103,6 +119,7 @@
       } else {
         correctCards = [...correctCards, first, second];
         if (correctCards.length === cards.length) {
+          clearInterval(secondsCounterInterval);
           setTimeout(() => (won = true), 1000);
         }
       }
@@ -112,8 +129,6 @@
   }
 
   function replaceElementAtIndex(index: number, newElement: CardModel): CardModel[] {
-    console.log({ index });
-
     return cards.map((value, i) => (i === index ? newElement : value));
   }
 
@@ -123,9 +138,15 @@
       .sort((a, b) => a.sort - b.sort)
       .map((a) => a.value);
   }
+
+  onDestroy(() => clearInterval(secondsCounterInterval));
 </script>
 
 <main>
+  <h2>
+    Time:
+    {#if started}&nbsp;{seconds}{/if}
+  </h2>
   <section class="board">
     {#each cards as card, i}
       <Card card="{card}" cardClickHandler="{() => flip(card, i)}" />
