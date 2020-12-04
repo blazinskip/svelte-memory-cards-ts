@@ -26,11 +26,10 @@
   }
 
   .card__face--front {
-    background: red;
+    background: #98b4a0;
   }
 
   .card__face--back {
-    background: blue;
     transform: rotateY(180deg);
   }
 </style>
