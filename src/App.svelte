@@ -1,49 +1,7 @@
-<style>
-  main {
-    text-align: center;
-    padding: 1em;
-    max-width: 240px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 95vh;
-  }
-
-  @media (min-width: 640px) {
-    main {
-      max-width: none;
-    }
-  }
-
-  .board {
-    justify-content: center;
-    align-items: center;
-    display: grid;
-    grid-template-columns: repeat(4, 150px);
-    grid-template-rows: repeat(4, 150px);
-    gap: 20px;
-  }
-
-  .won-alert {
-    position: absolute;
-    height: 100vh;
-    top: 0;
-    left: 0;
-    background: #0000008f;
-    width: 100vw;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .won-alert__alert {
-    background: white;
-    font-size: 64px;
-    padding: 32px 8px;
-    border-radius: 8px;
-  }
+<style global>
+  @tailwind base;
+  @tailwind components;
+  @tailwind utilities;
 </style>
 
 <script lang="ts">
@@ -142,13 +100,13 @@
   onDestroy(() => clearInterval(secondsCounterInterval));
 </script>
 
-<main>
+<main class="min-h-screen p-4">
   <h2>
     Time:
     {#if started}&nbsp;{seconds}{/if}
   </h2>
 
-  <section class="board">
+  <section class="grid grid-flow-row grid-cols-4 gap-4 h-96">
     {#each cards as card, i}
       <Card card="{card}" cardClickHandler="{() => flip(card, i)}" />
     {/each}
