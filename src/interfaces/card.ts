@@ -1,4 +1,4 @@
 export interface Card {
   filpped: boolean;
-  color: string;
+  backgroundSvg: 'Bear' | 'Bunny' | 'Donkey' | 'Duck' | 'Elephant' | 'Lion' | 'Pig' | 'Reindeer';
 }
