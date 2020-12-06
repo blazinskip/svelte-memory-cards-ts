@@ -157,7 +157,7 @@
     execa "^4.0.3"
     npm-run-path "^4.0.1"
 
-"@sveltejs/adapter-node@next":
+"@sveltejs/adapter-node@1.0.0-next.0":
   version "1.0.0-next.0"
   resolved "https://registry.yarnpkg.com/@sveltejs/adapter-node/-/adapter-node-1.0.0-next.0.tgz#8b5c81a8d46a0743c9642114bb557837603b3570"
   integrity sha512-NNdBGSARtrvLWLIUem/RKWYJ7cKq4xn0nxSASKogLSYL5SOrb6AgHunWQXv8VqDZ0jT7xQCORgASn006/HmaYQ==
@@ -171,10 +171,10 @@
   dependencies:
     mime "^2.4.6"
 
-"@sveltejs/kit@next":
-  version "1.0.0-next.5"
-  resolved "https://registry.yarnpkg.com/@sveltejs/kit/-/kit-1.0.0-next.5.tgz#a380a999781d8beea19cc810d02e94cd211dba44"
-  integrity sha512-pd9k+AxduJNgBoDEpO0Ntb1nINmdtgzLYUcjknPebY9YfsZRpbJfDXSpxnySREamNaFn5qx9D65Bgc+iOOkF+g==
+"@sveltejs/kit@1.0.0-next.1":
+  version "1.0.0-next.1"
+  resolved "https://registry.yarnpkg.com/@sveltejs/kit/-/kit-1.0.0-next.1.tgz#1d44d36c3938cd54b562208ac57964395652dea1"
+  integrity sha512-EmfQpYe8b9RtEn+oqLiZKRF5xISxMSPxjp+dbKwZAtWAVVXpSl1prdYwz+oJuV0K3Nn2IDClHDiO0ygftqPplA==
   dependencies:
     "@sveltejs/app-utils" "1.0.0-next.0"
     cheap-watch "^1.0.2"
@@ -187,7 +187,7 @@
     scorta "^1.0.0"
     snowpack "^2.17.0"
 
-"@sveltejs/snowpack-config@next":
+"@sveltejs/snowpack-config@1.0.0-next.0":
   version "1.0.0-next.0"
   resolved "https://registry.yarnpkg.com/@sveltejs/snowpack-config/-/snowpack-config-1.0.0-next.0.tgz#4f016b895c1ba2ff896d416022ce176bbb0938fe"
   integrity sha512-0G5GPdNIGRmiVWXK/43G4e7RJoiMYUYt85Won9dv/v+OAwlIq1g5Dnrr8bMMohKi/LXQQgySw96GeORWtbMJHg==
