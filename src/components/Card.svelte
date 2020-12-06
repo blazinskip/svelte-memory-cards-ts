@@ -1,3 +1,18 @@
+<script lang="ts">
+  import Bear from "./Bear.svelte";
+  import Bunny from "./Bunny.svelte";
+  import Donkey from "./Donkey.svelte";
+  import Duck from "./Duck.svelte";
+  import Elephant from "./Elephant.svelte";
+  import Lion from "./Lion.svelte";
+  import Pig from "./Pig.svelte";
+  import Reindeer from "./Reindeer.svelte";
+  import type { CardModel } from "../interfaces/card";
+
+  export let card: CardModel;
+  export let cardClickHandler = () => {};
+</script>
+
 <style type="scss">
   .card {
     position: relative;
@@ -37,23 +52,11 @@
   }
 </style>
 
-<script lang="ts">
-  import Bear from '../svg/Bear.svelte';
-  import Bunny from '../svg/Bunny.svelte';
-  import Donkey from '../svg/Donkey.svelte';
-  import Duck from '../svg/Duck.svelte';
-  import Elephant from '../svg/Elephant.svelte';
-  import Lion from '../svg/Lion.svelte';
-  import Pig from '../svg/Pig.svelte';
-  import Reindeer from '../svg/Reindeer.svelte';
-  import type { Card } from '../interfaces/card';
-
-  export let card: Card;
-  export let cardClickHandler = () => {};
-</script>
-
-<div class="card" class:card--flipped="{card.filpped}" on:click="{cardClickHandler}">
-  <div class="card__face card__face--front"></div>
+<div
+  class="card"
+  class:card--flipped={card.filpped}
+  on:click={cardClickHandler}>
+  <div class="card__face card__face--front" />
   <div class="card__face card__face--back" style="background: white">
     {#if card.backgroundSvg === 'Bear'}
       <Bear />
