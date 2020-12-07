@@ -5,6 +5,10 @@
   let seconds = 0;
 </script>
 
+<svelte:head>
+  <title>Card game</title>
+</svelte:head>
+
 <main class="max-w-2xl min-h-screen p-4 mx-auto">
   <h2>
     Time:
