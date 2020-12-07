@@ -5,7 +5,7 @@
   let seconds = 0;
 </script>
 
-<main class="min-h-screen p-4">
+<main class="max-w-2xl min-h-screen p-4 mx-auto">
   <h2>
     Time:
     {#if started}&nbsp;{seconds}{/if}
