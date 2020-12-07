@@ -1,3 +1,6 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/090c7383-497d-4fd2-b7ff-b307bad06992/deploy-status)](https://app.netlify.com/sites/blazinskip-memory-card/deploys)
+
+
 # create-svelte
 
 Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte);
