@@ -15,36 +15,12 @@
 
 <style type="scss">
   .card {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    cursor: pointer;
     transform-style: preserve-3d;
     transform-origin: center right;
-    transition: transform 1s;
   }
 
   .card.card--flipped {
     transform: translateX(-100%) rotateY(-180deg);
-  }
-
-  .card__face {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    line-height: 260px;
-    color: white;
-    text-align: center;
-    font-weight: bold;
-    font-size: 40px;
-    backface-visibility: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .card__face--front {
-    background: #98b4a0;
   }
 
   .card__face--back {
@@ -52,12 +28,12 @@
   }
 </style>
 
-<div
-  class="card"
+<button
+  class="relative w-full h-full transition duration-500 origin-center outline-none card focus:outline-none"
   class:card--flipped={card.filpped}
   on:click={cardClickHandler}>
-  <div class="card__face card__face--front" />
-  <div class="card__face card__face--back" style="background: white">
+<div class="absolute inset-0 flex items-center justify-center w-full h-full {card.filpped ? 'bg-transparent' : 'bg-blue-200'}" />
+<div class="absolute inset-0 flex items-center justify-center w-full h-full card__face--back {card.filpped ? 'bg-opacity-0 bg-blue-200' : 'bg-blue-200'} transition-colors ease-in-out duration-500">
     {#if card.backgroundSvg === 'Bear'}
       <Bear />
     {/if}
@@ -83,4 +59,4 @@
       <Reindeer />
     {/if}
   </div>
-</div>
+</button>
