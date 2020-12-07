@@ -1,2 +1,6 @@
 .svelte/*
 node_modules/
+.vercel
+.netlify/
+build/
+functions/
