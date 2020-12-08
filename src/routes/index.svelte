@@ -10,10 +10,12 @@
 </svelte:head>
 
 <main class="max-w-2xl min-h-screen p-4 mx-auto">
-  <h2>
+  <header class="mb-6 text-3xl text-green-100 mb">
+    <h2>
     Time:
     {#if started}&nbsp;{seconds}{/if}
-  </h2>
+    </h2>
+  </header>
   <Board
     started="{started}"
     seconds="{seconds}"
