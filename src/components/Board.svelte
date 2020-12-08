@@ -111,7 +111,8 @@
     on:click="{resetGame}"
   >
     <section
-      class="flex items-center w-1/2 p-4 text-center break-words bg-white rounded justify-items-center text-7xl h-1/5"
+    
+      class="flex items-center justify-center w-full text-3xl text-center break-words bg-white rounded h-1/3 sm:w-1/2 sm:text-5xl"
     >
       <p>Congratulations! You have won! <br />With time: {seconds}</p>
     </section>
