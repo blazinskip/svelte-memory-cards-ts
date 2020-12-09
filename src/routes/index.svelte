@@ -9,7 +9,7 @@
   <title>Card game</title>
 </svelte:head>
 
-<main class="max-w-2xl min-h-screen p-4 mx-auto">
+<main class="flex flex-col justify-center max-w-2xl min-h-screen p-4 mx-auto">
   <header class="mb-6 text-3xl text-green-100 mb">
     <h2>
     Time:
